@@ -120,30 +120,3 @@
                 toggleModal(donateModal, false);
             }
         });
-        
-        function preloadImages() {
-            const images = [
-                'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png',
-                'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1280px-Mastercard-logo.svg.png',
-                'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/1200px-PayPal.svg.png',
-                'images/elite.png',
-                'images/legend.png',
-                'images/knight.png',
-                'images/hero.png',
-                'images/master.png',
-                'images/titan.png',
-                'images/emperor.png',
-                'images/phantom.png',
-                'images/shadow.png',
-                'images/mythical.png',
-                'images/celestial.png',
-                'images/monarch.png',
-                'images/d-helper.png'
-            ];
-            
-            images.forEach(img => {
-                new Image().src = img;
-            });
-        }
-        
-        window.addEventListener('load', preloadImages);
