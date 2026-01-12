@@ -35,8 +35,10 @@ function handleLinkClick(e, link) {
   }, 800);
 }
 
-if (rulesLink) rulesLink.addEventListener('click', e => handleLinkClick(e, rulesLink));
-if (launcherLink) launcherLink.addEventListener('click', e => handleLinkClick(e, launcherLink));
+if (rulesLink)
+  rulesLink.addEventListener('click', e => handleLinkClick(e, rulesLink));
+if (launcherLink)
+  launcherLink.addEventListener('click', e => handleLinkClick(e, launcherLink));
 
 // Плавный скролл по якорям
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -85,23 +87,28 @@ function toggleModal(modal, show) {
   }
 }
 
-if (offerLink) offerLink.addEventListener('click', e => {
-  e.preventDefault();
-  toggleModal(offerModal, true);
-});
+if (offerLink)
+  offerLink.addEventListener('click', e => {
+    e.preventDefault();
+    toggleModal(offerModal, true);
+  });
 
-if (donateLink) donateLink.addEventListener('click', e => {
-  e.preventDefault();
-  toggleModal(donateModal, true);
-});
+if (donateLink)
+  donateLink.addEventListener('click', e => {
+    e.preventDefault();
+    toggleModal(donateModal, true);
+  });
 
-if (donateNavLink) donateNavLink.addEventListener('click', e => {
-  e.preventDefault();
-  toggleModal(donateModal, true);
-});
+if (donateNavLink)
+  donateNavLink.addEventListener('click', e => {
+    e.preventDefault();
+    toggleModal(donateModal, true);
+  });
 
-if (offerClose) offerClose.addEventListener('click', () => toggleModal(offerModal, false));
-if (donateClose) donateClose.addEventListener('click', () => toggleModal(donateModal, false));
+if (offerClose)
+  offerClose.addEventListener('click', () => toggleModal(offerModal, false));
+if (donateClose)
+  donateClose.addEventListener('click', () => toggleModal(donateModal, false));
 
 window.addEventListener('click', e => {
   if (e.target === offerModal) toggleModal(offerModal, false);
