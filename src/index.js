@@ -1,3 +1,4 @@
+// Кнопка копирования IP
 const playBtn = document.getElementById('play-btn');
 const ipDisplay = document.getElementById('ip-display');
 
@@ -6,12 +7,9 @@ playBtn.addEventListener('click', function () {
     .writeText('mc.novatime.pp.ua')
     .then(() => {
       ipDisplay.classList.add('show');
-
-      setTimeout(() => {
-        ipDisplay.classList.remove('show');
-      }, 1500);
+      setTimeout(() => ipDisplay.classList.remove('show'), 1500);
     })
-    .catch(err => {
+    .catch(() => {
       const tempInput = document.createElement('input');
       tempInput.value = 'mc.novatime.pp.ua';
       document.body.appendChild(tempInput);
@@ -20,12 +18,11 @@ playBtn.addEventListener('click', function () {
       document.body.removeChild(tempInput);
 
       ipDisplay.classList.add('show');
-      setTimeout(() => {
-        ipDisplay.classList.remove('show');
-      }, 1500);
+      setTimeout(() => ipDisplay.classList.remove('show'), 1500);
     });
 });
 
+// Ссылки с задержкой перехода
 const rulesLink = document.getElementById('rules-link');
 const launcherLink = document.getElementById('launcher-link');
 const donateNavLink = document.getElementById('donate-nav-link');
@@ -33,31 +30,35 @@ const donateNavLink = document.getElementById('donate-nav-link');
 function handleLinkClick(e, link) {
   e.preventDefault();
   link.classList.add('loading');
-
   setTimeout(() => {
     window.location.href = link.href;
   }, 800);
 }
 
-rulesLink.addEventListener('click', e => handleLinkClick(e, rulesLink));
-launcherLink.addEventListener('click', e => handleLinkClick(e, launcherLink));
+if (rulesLink) rulesLink.addEventListener('click', e => handleLinkClick(e, rulesLink));
+if (launcherLink) launcherLink.addEventListener('click', e => handleLinkClick(e, launcherLink));
 
+// Плавный скролл по якорям
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth',
-    });
+    const targetId = this.getAttribute('href');
+    if (targetId === '#' || !targetId.trim()) return; // защита от пустого #
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      e.preventDefault();
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
   });
 });
 
 document.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
-    document.querySelector('.server-title').classList.add('animate__pulse');
+    const serverTitle = document.querySelector('.server-title');
+    if (serverTitle) serverTitle.classList.add('animate__pulse');
   }, 1000);
 
   const video = document.querySelector('.video-background');
-  video.volume = 1.0;
+  if (video) video.volume = 1.0;
 });
 
 const offerModal = document.getElementById('offer-modal');
@@ -68,6 +69,7 @@ const offerClose = document.getElementById('offer-close');
 const donateClose = document.getElementById('donate-close');
 
 function toggleModal(modal, show) {
+  if (!modal) return;
   if (show) {
     modal.style.display = 'flex';
     setTimeout(() => {
@@ -83,36 +85,27 @@ function toggleModal(modal, show) {
   }
 }
 
-offerLink.addEventListener('click', e => {
+if (offerLink) offerLink.addEventListener('click', e => {
   e.preventDefault();
   toggleModal(offerModal, true);
 });
 
-donateLink.addEventListener('click', e => {
+if (donateLink) donateLink.addEventListener('click', e => {
   e.preventDefault();
   toggleModal(donateModal, true);
 });
 
-donateNavLink.addEventListener('click', e => {
+if (donateNavLink) donateNavLink.addEventListener('click', e => {
   e.preventDefault();
   toggleModal(donateModal, true);
 });
 
-offerClose.addEventListener('click', () => {
-  toggleModal(offerModal, false);
-});
-
-donateClose.addEventListener('click', () => {
-  toggleModal(donateModal, false);
-});
+if (offerClose) offerClose.addEventListener('click', () => toggleModal(offerModal, false));
+if (donateClose) donateClose.addEventListener('click', () => toggleModal(donateModal, false));
 
 window.addEventListener('click', e => {
-  if (e.target === offerModal) {
-    toggleModal(offerModal, false);
-  }
-  if (e.target === donateModal) {
-    toggleModal(donateModal, false);
-  }
+  if (e.target === offerModal) toggleModal(offerModal, false);
+  if (e.target === donateModal) toggleModal(donateModal, false);
 });
 
 document.addEventListener('keydown', e => {
