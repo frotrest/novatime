@@ -1,4 +1,3 @@
-// Кнопка копирования IP
 const playBtn = document.getElementById('play-btn');
 const ipDisplay = document.getElementById('ip-display');
 
@@ -22,7 +21,6 @@ playBtn.addEventListener('click', function () {
     });
 });
 
-// Ссылки с задержкой перехода
 const rulesLink = document.getElementById('rules-link');
 const launcherLink = document.getElementById('launcher-link');
 const donateNavLink = document.getElementById('donate-nav-link');
@@ -40,11 +38,10 @@ if (rulesLink)
 if (launcherLink)
   launcherLink.addEventListener('click', e => handleLinkClick(e, launcherLink));
 
-// Плавный скролл по якорям
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     const targetId = this.getAttribute('href');
-    if (targetId === '#' || !targetId.trim()) return; // защита от пустого #
+    if (targetId === '#' || !targetId.trim()) return;
     const targetElement = document.querySelector(targetId);
     if (targetElement) {
       e.preventDefault();
