@@ -6,18 +6,20 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build --base=/novatime/",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint src", 
+    "lint:fix": "eslint src --fix", 
+    "format": "prettier --write src"
   },
   "devDependencies": {
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
     "glob": "^11.0.0",
     "postcss": "^8.4.41",
     "postcss-sort-media-queries": "^5.2.0",
+    "prettier": "^3.7.4",
     "vite": "^5.4.6"
   },
-  "author": "Frotrest <romansydorko10@gmail.com>",
-  "license": "ISC",
-  "dependencies": {
-    "vite-plugin-full-reload": "^1.2.0",
-    "vite-plugin-html-inject": "^1.1.2"
-  }
+  "author": "frotrest <romansydorko10@gmail.com>"
 }
