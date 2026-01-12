@@ -19,13 +19,21 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, rgba(255, 255, 255, 0.3), rgba(200, 200, 200, 0.5));
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.3),
+    rgba(200, 200, 200, 0.5)
+  );
   border-radius: 5px;
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(45deg, rgba(255, 255, 255, 0.4), rgba(200, 200, 200, 0.6));
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.4),
+    rgba(200, 200, 200, 0.6)
+  );
 }
 
 body {
@@ -57,7 +65,11 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.9) 100%);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
   z-index: -1;
 }
 
@@ -144,7 +156,12 @@ header {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
   transition: 0.5s;
 }
 
@@ -180,7 +197,11 @@ header {
 }
 
 .play-btn {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.05)
+  );
   border: 1px solid rgba(255, 255, 255, 0.4);
   color: white;
   padding: 12px 35px;
@@ -201,7 +222,6 @@ header {
 }
 
 @keyframes float {
-
   0%,
   100% {
     transform: translateY(0) scale(1);
@@ -219,7 +239,12 @@ header {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
   transition: 0.7s;
   z-index: -1;
 }
@@ -243,7 +268,11 @@ header {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.15) 0%,
+    transparent 70%
+  );
   transform: scale(0);
   transition: transform 0.7s ease;
   pointer-events: none;
@@ -284,7 +313,7 @@ header {
   right: -15px;
   width: 30px;
   height: 30px;
-  background: #4CAF50;
+  background: #4caf50;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -398,7 +427,7 @@ main {
   font-size: 28px;
   font-weight: 600;
   margin: 15px 0;
-  color: #4CAF50;
+  color: #4caf50;
   text-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
   font-family: 'Orbitron', sans-serif;
   position: relative;
@@ -419,7 +448,7 @@ main {
   font-size: 28px;
   font-weight: 600;
   margin: 15px 0;
-  color: #4CAF50;
+  color: #4caf50;
   text-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
   font-family: 'Orbitron', sans-serif;
   position: relative;
@@ -531,7 +560,9 @@ footer {
   padding: 30px;
   position: relative;
   transform: scale(0.95);
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
   opacity: 0;
   box-shadow: 0 0 50px rgba(255, 255, 255, 0.1);
   will-change: transform, opacity;
@@ -665,7 +696,7 @@ footer {
 
 .donate-price {
   text-align: center;
-  color: #4CAF50;
+  color: #4caf50;
   font-weight: 600;
   font-size: 16px;
 }
@@ -680,25 +711,6 @@ footer {
 
 .animate-delay-3 {
   animation-delay: 0.6s;
-}
-
-@media (max-width: 992px) {
-  .server-title {
-    font-size: 64px;
-  }
-
-  .stats-container {
-    gap: 25px;
-  }
-
-  .stat-item {
-    width: 230px;
-    padding: 20px 25px;
-  }
-
-  .donate-grid {
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-  }
 }
 
 @media (max-width: 1200px) {
@@ -753,6 +765,25 @@ footer {
   .donate-grid {
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     gap: 15px;
+  }
+}
+
+@media (max-width: 992px) {
+  .server-title {
+    font-size: 64px;
+  }
+
+  .stats-container {
+    gap: 25px;
+  }
+
+  .stat-item {
+    width: 230px;
+    padding: 20px 25px;
+  }
+
+  .donate-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
   }
 }
 
